@@ -7,14 +7,28 @@ import React, { useState, useRef } from 'react';
 import { motion } from 'motion/react';
 import { MapPin, Calendar, DollarSign, Ruler, Home, Accessibility, ShieldCheck, ArrowRight, ChevronLeft, ChevronRight, Maximize2, X } from 'lucide-react';
 
+import heroImg from './assets/hero.jpg';
+import interiorImg from './assets/interior.jpg';
+import bp1 from './assets/blueprint1.jpg';
+import bp2 from './assets/blueprint2.jpg';
+import bp3 from './assets/blueprint3.jpg';
+import bp4 from './assets/blueprint4.jpg';
+import bp5 from './assets/blueprint5.jpg';
+import bp6 from './assets/blueprint6.jpg';
+import bp7 from './assets/blueprint7.jpg';
+import quartzImg from './assets/quartz.jpg';
+import hardwoodImg from './assets/hardwood.jpg';
+import clapboardImg from './assets/clapboard.jpg';
+import shedroofImg from './assets/shedroof.jpg';
+
 const blueprintData = [
-  { title: "Site Plan & Zoning Info", id: "A1-000", img: "https://picsum.photos/seed/blueprint1/1200/800?grayscale" },
-  { title: "Foundation Plans", id: "A2-000", img: "https://picsum.photos/seed/blueprint2/1200/800?grayscale" },
-  { title: "Basement Floor Plans", id: "A2-100", img: "https://picsum.photos/seed/blueprint3/1200/800?grayscale" },
-  { title: "Main Floor Plans", id: "A2-101", img: "https://picsum.photos/seed/blueprint4/1200/800?grayscale" },
-  { title: "Building Elevations", id: "A3-000", img: "https://picsum.photos/seed/blueprint5/1200/800?grayscale" },
-  { title: "Building Sections", id: "A4-000", img: "https://picsum.photos/seed/blueprint6/1200/800?grayscale" },
-  { title: "Millwork Plans", id: "ID4-000", img: "https://picsum.photos/seed/blueprint7/1200/800?grayscale" },
+  { title: "Site Plan & Zoning Info", id: "A1-000", img: bp1 },
+  { title: "Foundation Plans", id: "A2-000", img: bp2 },
+  { title: "Basement Floor Plans", id: "A2-100", img: bp3 },
+  { title: "Main Floor Plans", id: "A2-101", img: bp4 },
+  { title: "Building Elevations", id: "A3-000", img: bp5 },
+  { title: "Building Sections", id: "A4-000", img: bp6 },
+  { title: "Millwork Plans", id: "ID4-000", img: bp7 },
 ];
 
 export default function App() {
@@ -49,10 +63,9 @@ export default function App() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://picsum.photos/seed/midcenturyhome/1920/1080" 
+            src={heroImg} 
             alt="Mid-Century Modern Home Exterior" 
             className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-stone-900/70"></div>
         </div>
@@ -118,10 +131,9 @@ export default function App() {
               className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl"
             >
               <img 
-                src="https://picsum.photos/seed/moderninterior/800/1000" 
+                src={interiorImg} 
                 alt="Modern Interior" 
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
               />
             </motion.div>
           </div>
@@ -203,7 +215,6 @@ export default function App() {
                       src={bp.img} 
                       alt={bp.title} 
                       className="absolute inset-0 w-full h-full object-cover filter contrast-125 opacity-90 mix-blend-multiply transition-transform duration-700 group-hover/img:scale-105"
-                      referrerPolicy="no-referrer"
                     />
                     {/* Architectural grid overlay */}
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
@@ -237,22 +248,22 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <MaterialCard 
-              image="https://picsum.photos/seed/quartz/600/800"
+              image={quartzImg}
               title="Quartz Countertops"
               desc="Extremely durable, low maintenance, and visually striking for both kitchens."
             />
             <MaterialCard 
-              image="https://picsum.photos/seed/hardwood/600/800"
+              image={hardwoodImg}
               title="Engineered Hardwood"
               desc="Warm, natural tones that tie the open-concept living spaces together."
             />
             <MaterialCard 
-              image="https://picsum.photos/seed/clapboard/600/800"
+              image={clapboardImg}
               title="Composite Clapboard"
               desc="A natural wood appearance with superior weather resistance and longevity."
             />
             <MaterialCard 
-              image="https://picsum.photos/seed/shedroof/600/800"
+              image={shedroofImg}
               title="Double Shed Roof"
               desc="Asphalt shingles on a low-profile roof, shedding water effectively while maintaining the aesthetic."
             />
@@ -299,7 +310,6 @@ export default function App() {
                 src={selectedBlueprint.img} 
                 alt={selectedBlueprint.title} 
                 className="w-full h-auto max-h-[75vh] object-contain filter contrast-125 mx-auto"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
             </div>
@@ -355,7 +365,6 @@ function MaterialCard({ image, title, desc }: { image: string, title: string, de
         src={image} 
         alt={title} 
         className="w-full h-full object-cover transition-transform duration-1000 lg:group-hover:scale-110"
-        referrerPolicy="no-referrer"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-stone-900/95 via-stone-900/30 to-transparent flex flex-col justify-end p-8">
         <h4 className="text-white font-serif font-bold text-2xl lg:mb-3 transform transition-transform duration-500 lg:group-hover:-translate-y-2">
