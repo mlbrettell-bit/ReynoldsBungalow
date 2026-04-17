@@ -7,7 +7,7 @@ import React, { useState, useRef } from 'react';
 import { motion } from 'motion/react';
 import { MapPin, Calendar, DollarSign, Ruler, Home, Accessibility, ShieldCheck, ArrowRight, ChevronLeft, ChevronRight, Maximize2, X } from 'lucide-react';
 
-import heroImg from './assets/hero.png';
+import heroImg from '../assets/hero.png';
 import interiorImg from './assets/interior.jpg';
 import bp1 from './assets/blueprint1.jpg';
 import bp2 from './assets/blueprint2.jpg';
