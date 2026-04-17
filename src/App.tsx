@@ -8,19 +8,19 @@ import { motion } from 'motion/react';
 import { MapPin, Calendar, DollarSign, Ruler, Home, Accessibility, ShieldCheck, ArrowRight, ChevronLeft, ChevronRight, Maximize2, X } from 'lucide-react';
 
 const blueprintData = [
-  { title: "Title Page", id: "A0-000", img: "https://i.postimg.cc/QVZjgB9k/A0-000-Title-Page.png" },
-  { title: "Assembly & Legends", id: "A0-001", img: "https://i.postimg.cc/yxZVShd7/A0-001-Assembly-Legends.png" },
-  { title: "Site Plan & Zoning Info", id: "A1-000", img: "https://i.postimg.cc/4y9Jhvd4/A1-000-Site-Plan-Zoning-Info.png" },
-  { title: "Foundation Plans", id: "A2-000", img: "https://i.postimg.cc/8c61rd5N/A2-000-Foundation-Plans.png" },
-  { title: "Basement Floor Plans", id: "A2-100", img: "https://i.postimg.cc/qgHpcthM/A2-100-Basement-Floor-Plans.png"},
-  { title: "Main Floor Plans", id: "A2-101", img: "https://i.postimg.cc/G9nbPB8P/A2-101-Main-Floor-Plans.png" },
-  { title: "Enlarged Plans", id: "A2-300", img: "https://i.postimg.cc/MXJz0cMV/A2-300-Enlarged-Plans.png" },
-  { title: "Building Elevations", id: "A3-000", img: "https://i.postimg.cc/jqwNhGwF/A3-000-Building-Elevations.png" },
-  { title: "Building Elevations", id: "A3-001", img: "https://i.postimg.cc/PfpZMBvL/A3-001-Building-Elevations.png" },
-  { title: "Building Sections", id: "A4-000", img: "https://i.postimg.cc/SQB91Dcs/A4-000-Building-Sections.png" },
-  { title: "Building Sections", id: "A4-001", img: "https://i.postimg.cc/gcChtN3n/A4-001-Building-Sections.png" },
-  { title: "Main Floor - Millwork Plans", id: "ID4-000", img: "https://i.postimg.cc/NG3XCpRr/ID4-000-Main-Floor.png" },
-  { title: "Basement - Millwork Plans", id: "ID4-001", img: "https://i.postimg.cc/pVwjcqKD/ID4-001-Basement.png" }
+  { title: "Title Page", id: "A0-000", img: "https://i.postimg.cc/T3C672Kx/A-Page-001.jpg" },
+  { title: "Assembly & Legends", id: "A0-001", img: "https://i.postimg.cc/kgfm1M2m/A-Page-002.jpg" },
+  { title: "Site Plan & Zoning Info", id: "A1-000", img: "https://i.postimg.cc/13JQCR8s/A-Page-003.jpg" },
+  { title: "Foundation Plans", id: "A2-000", img: "https://i.postimg.cc/fRBN2WVh/A-Page-004.jpg" },
+  { title: "Basement Floor Plans", id: "A2-100", img: "https://i.postimg.cc/rpsLv6r3/A-Page-005.jpg"},
+  { title: "Main Floor Plans", id: "A2-101", img: "https://i.postimg.cc/xd8SWrm2/A-Page-006.jpg" },
+  { title: "Enlarged Plans", id: "A2-300", img: "https://i.postimg.cc/FKzQ2tS5/A-Page-007.jpg" },
+  { title: "Building Elevations", id: "A3-000", img: "https://i.postimg.cc/rpsLv64c/A-Page-008.jpg" },
+  { title: "Building Elevations", id: "A3-001", img: "https://i.postimg.cc/yNxzwqRV/A-Page-009.jpg" },
+  { title: "Building Sections", id: "A4-000", img: "https://i.postimg.cc/hGvqHFmh/A-Page-010.jpg" },
+  { title: "Building Sections", id: "A4-001", img: "https://i.postimg.cc/Gpt1Z0DB/A-Page-011.jpg" },
+  { title: "Main Floor - Millwork Plans", id: "ID4-000", img: "https://i.postimg.cc/tgJHL06P/A-Page-012.jpg" },
+  { title: "Basement - Millwork Plans", id: "ID4-001", img: "https://i.postimg.cc/wBrdzW57/A-Page-013.jpg" }
 ];
 
 export default function App() {
@@ -46,6 +46,7 @@ export default function App() {
             <a href="#overview" className="hover:text-emerald-700 transition-colors">Overview</a>
             <a href="#features" className="hover:text-emerald-700 transition-colors">Features</a>
             <a href="#blueprints" className="hover:text-emerald-700 transition-colors">Blueprints</a>
+            <a href="#renders" className="hover:text-emerald-700 transition-colors">Renders</a>
             <a href="#design" className="hover:text-emerald-700 transition-colors">Design</a>
           </div>
         </div>
@@ -224,6 +225,84 @@ export default function App() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Visualizations / Renders */}
+      <section id="renders" className="py-28 bg-stone-900 border-t border-stone-800 text-stone-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-sm font-bold text-emerald-500 tracking-widest uppercase mb-4">Visualizations</h2>
+            <h3 className="text-4xl font-serif font-bold text-white mb-6">High-Fidelity Renders</h3>
+            <p className="text-stone-400 text-lg">Detailed 3D visualizations showcasing the mid-century modern aesthetic, from the striking exterior to the refined interior spaces.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Exterior View */}
+            <motion.div 
+               initial="hidden" whileInView="visible" viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+               variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
+               className="lg:col-span-2 relative h-[400px] md:h-[600px] overflow-hidden rounded-3xl shadow-2xl group"
+            >
+              <img src="https://i.postimg.cc/wBr5qHRr/1-0-Exterior.png" alt="Exterior View" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950 via-stone-900/80 to-transparent p-6 md:p-8 pt-32">
+                <h4 className="text-white font-serif text-2xl font-bold mb-2">Exterior View</h4>
+                <p className="text-stone-300">Composite clapboard siding, stone accents, and a distinctive double shed roof.</p>
+              </div>
+            </motion.div>
+
+            {/* Main Floor Kitchen */}
+            <motion.div 
+               initial="hidden" whileInView="visible" viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+               variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.2 } } }}
+               className="relative h-[400px] md:h-[600px] overflow-hidden rounded-3xl shadow-2xl group"
+            >
+              <img src="https://i.postimg.cc/rsQBhQpK/2-1-Interior-upscaled-(Large).png" alt="Main Floor Kitchen" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950 via-stone-900/80 to-transparent p-6 md:p-8 pt-32">
+                <h4 className="text-white font-serif text-2xl font-bold mb-2">Main Floor Kitchen</h4>
+                <p className="text-stone-300 text-sm">Open concept layout featuring premium quartz countertops.</p>
+              </div>
+            </motion.div>
+
+            {/* Master Bedroom */}
+            <motion.div 
+               initial="hidden" whileInView="visible" viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+               variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
+               className="relative h-[400px] overflow-hidden rounded-3xl shadow-2xl group"
+            >
+              <img src="https://i.postimg.cc/vBRb9q1Y/Bedroom-Down.png" alt="Master Bedroom" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950 via-stone-900/80 to-transparent p-6 pt-24">
+                <h4 className="text-white font-serif text-xl font-bold mb-2">Master Bedroom</h4>
+                <p className="text-stone-300 text-sm">Spacious sanctuary with engineered hardwood flooring.</p>
+              </div>
+            </motion.div>
+
+            {/* Master Ensuite */}
+            <motion.div 
+               initial="hidden" whileInView="visible" viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+               variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.2 } } }}
+               className="relative h-[400px] overflow-hidden rounded-3xl shadow-2xl group"
+            >
+              <img src="https://i.postimg.cc/6qtKb8Lz/Bathroom.png" alt="Master Ensuite" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950 via-stone-900/80 to-transparent p-6 pt-24">
+                <h4 className="text-white font-serif text-xl font-bold mb-2">Master Ensuite</h4>
+                <p className="text-stone-300 text-sm">Accessible design with luxurious finishes and a 1500mm turning radius.</p>
+              </div>
+            </motion.div>
+
+            {/* Basement Living Room */}
+            <motion.div 
+               initial="hidden" whileInView="visible" viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+               variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.4 } } }}
+               className="relative h-[400px] overflow-hidden rounded-3xl shadow-2xl group"
+            >
+              <img src="https://i.postimg.cc/Bnddw8Jh/living.png" alt="Basement Living Room" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950 via-stone-900/80 to-transparent p-6 pt-24">
+                <h4 className="text-white font-serif text-xl font-bold mb-2">Basement Living Room</h4>
+                <p className="text-stone-300 text-sm">Comfortable secondary dwelling entertainment space.</p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
